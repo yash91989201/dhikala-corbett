@@ -1,0 +1,182 @@
+// JavaScript Document
+
+function validateForm(testform)
+{
+  var str=document.testform.email.value;
+  var regex = /^(\w+(?:\.\w+)*)@((?:\w+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+  
+  var theurl=document.testform.information.value;
+  var tomatch= /http:\/\/[A-Za-z0-9\.-]{3,}\.[A-Za-z]{3}/;
+  
+  	if(testform.name.value == "") 
+    {
+    alert( "Please Enter Your Name." );
+    testform.name.focus();
+    return false ;
+  	}
+	
+	else if(testform.testinput.value == "") 
+  	{
+    alert( "Please Enter Arival Date" );
+    testform.testinput.focus();
+    return false ;
+  	}
+  	
+	else if(!regex.test(str))
+  	{
+    alert( "Please Enter Valid Email ID." );
+    testform.email.focus();
+    return false ;
+  	}
+   	
+	else if(testform.duration.selectedIndex==0) 
+  	{
+    alert( "Please Select Duration" );
+    testform.duration.focus();
+    return false ;
+  	}
+	
+	else if(testform.lodges.selectedIndex==0) 
+  	{
+    alert( "Please Select Lodges" );
+    testform.lodges.focus();
+    return false ;
+  	}
+	
+	else if(testform.adult.selectedIndex==0) 
+  	{
+    alert( "Please Select Adult" );
+    testform.adult.focus();
+    return false ;
+  	}
+	
+	else if(testform.child.selectedIndex==0) 
+  	{
+    alert( "Please Select Child" );
+    testform.child.focus();
+    return false ;
+  	}
+	
+	else if(!isValidPhoneNumber(testform.phone.value))
+	{
+	alert( "Please Enter Your Contact No." );
+	testform.phone.focus();
+	return false;
+	}
+	
+	else if(!(testform.phone.value.length >= 10)) 
+	{
+	alert( "Enter Valid Number !" );
+    testform.phone.focus();
+    return false ;	
+	}
+	
+	else if(testform.category.selectedIndex==0) 
+  	{
+    alert( "Please Select Your Category" );
+    testform.category.focus();
+    return false ;
+  	}
+	
+	else if(testform.tour.selectedIndex==0) 
+  	{
+    alert( "Please Select Your Package" );
+    testform.tour.focus();
+    return false ;
+  	}
+	
+	else if(testform.information.value == "") 
+  	{
+    alert( "Please Enter Your Comments" );
+    testform.information.focus();
+    return false ;
+  	}
+	
+	else if(tomatch.test(theurl))
+    {
+	alert( "Please Enter Correct Comments" );
+	testform.information.focus();
+	return false ;
+    }
+	
+	if(frm.imgcode)
+	if(frm.imgcode.value=="")
+	{
+		alert("Please enter image code");
+		frm.imgcode.focus();
+		return false;
+	}
+	
+  	
+ }
+ 
+ function isValidPhoneNumber(TheNumber) 
+	{
+		var valid = 1
+		var GoodChars = "0123456789()-+ "
+		var i = 0
+		if (TheNumber=="") {
+			// Return false if number is empty
+			valid = 0
+		}
+		for (i =0; i <= TheNumber.length -1; i++) {
+			if (GoodChars.indexOf(TheNumber.charAt(i)) == -1) {
+				valid = 0
+			} // End if statement
+		} // End for loop
+		return valid
+	}	
+	
+function IsEmail(oObject) {
+	var emailStr=oObject;
+	var emailPat=/^(.+)@(.+)$/;
+	var specialChars="\\(\\)<>@,;:\\\\\\\"\\.\\[\\]";
+	var validChars="\[^\\s" + specialChars + "\]";
+	var quotedUser="(\"[^\"]*\")";
+	var ipDomainPat=/^\[(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\]$/;
+	var atom=validChars + '+';
+	var word="(" + atom + "|" + quotedUser + ")";
+	var userPat=new RegExp("^" + word + "(\\." + word + ")*$");
+	var domainPat=new RegExp("^" + atom + "(\\." + atom +")*$");
+	var matchArray=emailStr.match(emailPat);
+	if (matchArray==null) {
+		alert("Email address seems incorrect (check @ and .'s)");
+		return false;
+	}
+	var user=matchArray[1];
+	var domain=matchArray[2];
+	if (user.match(userPat)==null) {
+		alert("The username doesn't seem to be valid. Please check or register fresh");
+		return false;
+	}
+	var IPArray=domain.match(ipDomainPat);
+	if (IPArray!=null) {
+		for (var i=1;i<=4;i++) {
+			if (IPArray[i]>255) {
+				alert("Destination IP address is invalid!");
+				return false;
+			}
+		}
+		return true;
+	}
+	var domainArray=domain.match(domainPat);
+	if (domainArray==null) {
+		alert("The domain name doesn't seem to be valid.");
+		return false;
+	}
+	var atomPat=new RegExp(atom,"g");
+	var domArr=domain.match(atomPat);
+	var len=domArr.length;
+	if (domArr[domArr.length-1].length<2 || domArr[domArr.length-1].length>4) {
+		alert("The address must end in a three-letter domain, or two letter country.");
+		return false;
+	}
+	if (len<2) {
+		var errStr="This address is missing a hostname!";
+		alert(errStr);
+		return false;
+	}
+	return true;
+}
+
+	

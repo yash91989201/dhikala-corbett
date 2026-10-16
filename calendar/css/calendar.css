@@ -1,0 +1,133 @@
+/*body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	margin: 0px;
+	font-size: 11px;
+	}*/
+
+#topttable {
+	background-image: url(images/bg.jpg);
+	background-position:left top;
+	background-repeat:no-repeat;
+}
+
+.titletext {
+	font-family:Arial, Helvetica, sans-serif;
+	background-color: #ff6600;
+	font-size: 12px;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+}
+
+TD.caltitle
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	font-size: 10px;
+	color: #000000;
+	font-weight: bold;
+	text-align: center;
+}
+TD.caltxt
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	font-weight:bold;
+	padding-top:6px;
+	/*margin: 0px;
+	padding-top:3px;*/
+}
+
+A.cal_link:Link
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	text-decoration: underline;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+A.cal_link:Visited
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	text-decoration: underline;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+A.cal_link:Hover
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+select.year {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	vertical-align: middle;
+}
+
+select.date {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	vertical-align: middle;
+}
+input.res {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	vertical-align: middle;
+	width:140px;
+	background-image:url(../images/calendar_icon.gif) !important;
+	background-position:right 5px top 4px;
+	background-repeat:no-repeat;
+	border:1px solid #ccc;
+	padding:5px;
+}
+
+
+select.property {
+	border:1px solid #cccccc;
+	width:165px;
+	height:25px;
+}
+
+select.res {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	vertical-align: middle;
+	width:50px;
+	height:25px;
+	padding:0px;
+}
+
+#booking {
+	background-position:left top;
+	background-repeat:no-repeat;
+	width:100%;
+	position:relative;
+    width:100%;
+    z-index: 90;
+}
+#booking td{
+		border:0px !important;
+		text-align:left !important;
+		vertical-align:middle !important;
+
+}
+
+#slider {
+    position: relative;
+}
+	
+	
+	

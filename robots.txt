@@ -1,0 +1,10 @@
+User-agent: *
+
+Disallow: /indexbkp.html
+Disallow: /indexold.html
+Disallow: /img/
+Disallow: /gifs/
+Disallow: /js/
+Disallow: /fonts/
+
+Sitemap: https://dhikala-corbett.com/sitemap.xml
