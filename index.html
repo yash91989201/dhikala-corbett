@@ -5,9 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <Title>Dhikala Corbett | Safari, Forest Stay & Travel Information</Title>
-    <META NAME="Description"
-        CONTENT="Explore Dhikala forest stays, safari packages, and travel information for Jim Corbett National Park. Operated by Green View Voyage Private Limited.">
+    <title>Dhikala Forest Rest House | Jim Corbett National Park</title>
+    <meta name="description" content="Complete guide for Dhikala Forest Rest House, 30 kms inside corbett national park, managed  by forest department.">
     <META NAME="Keywords"
         CONTENT="Dhikala Tour, dhikala corbett Packages, Online Dhikala Safari Tour, dhikala tour package, dhikala safai, accomodation in dhikala, dhikala forest lodge, safari in dhikala zone">
     <Meta Name="Robots" Content="index, follow">
@@ -22,6 +21,355 @@
 
     <link href="qform/frm.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- New footer UI (home page only) -->
+    <style>
+        .site-footer {
+            --sf-bg: #1d1d1d;
+            --sf-bg-alt: #252525;
+            --sf-text: #d5d5d5;
+            --sf-heading: #ffffff;
+            --sf-accent: #e8a33d;
+            --sf-border: rgba(255, 255, 255, 0.12);
+            /* height of the sticky Call Us / Send Enquiry bar (<=991px only) */
+            --sf-bar-h: 54px;
+
+            background: var(--sf-bg);
+            color: var(--sf-text);
+            padding: 45px 0 24px;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        }
+
+        .site-footer p,
+        .site-footer li {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .site-footer a {
+            color: var(--sf-text);
+            transition: color .25s ease;
+        }
+
+        .site-footer a:hover,
+        .site-footer a:focus {
+            color: var(--sf-accent);
+            text-decoration: none;
+        }
+
+        .site-footer .sf-title {
+            color: var(--sf-heading);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            margin: 0 0 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--sf-border);
+            position: relative;
+        }
+
+        .site-footer .sf-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 45px;
+            height: 2px;
+            background: var(--sf-accent);
+        }
+
+        /* top contact strip */
+        .sf-contact {
+            display: flex;
+            flex-wrap: wrap;
+            background: var(--sf-bg-alt);
+            border: 1px solid var(--sf-border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .sf-contact-item {
+            flex: 1 1 33.33%;
+            min-width: 250px;
+            padding: 22px 26px;
+            border-right: 1px solid var(--sf-border);
+        }
+
+        .sf-contact-item:last-child {
+            border-right: 0;
+        }
+
+        .sf-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--sf-accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        .sf-label .fa {
+            color: var(--sf-accent);
+            font-size: 14px;
+            margin-right: 7px;
+        }
+
+        .sf-contact-item p {
+            margin: 0;
+            color: #efefef;
+        }
+
+        .sf-contact-item a {
+            display: inline-block;
+        }
+
+        /* main columns */
+        .sf-col {
+            margin-bottom: 32px;
+        }
+
+        .sf-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sf-info li {
+            padding: 0 0 10px;
+            margin: 0 0 10px;
+            border-bottom: 1px dashed var(--sf-border);
+        }
+
+        .sf-info li:last-child {
+            border-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .sf-info span {
+            display: block;
+            margin-bottom: 2px;
+            color: #8f8f8f;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .sf-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            column-count: 2;
+            column-gap: 28px;
+        }
+
+        .sf-links li {
+            break-inside: avoid;
+            margin-bottom: 10px;
+        }
+
+        .sf-links a::before {
+            content: "\f105";
+            font-family: FontAwesome;
+            color: var(--sf-accent);
+            margin-right: 8px;
+        }
+
+        .sf-social {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            display: flex;
+        }
+
+        .sf-social li {
+            margin-right: 10px;
+        }
+
+        .sf-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--sf-border);
+            border-radius: 50%;
+            transition: all .25s ease;
+        }
+
+        .site-footer .sf-social a .fa {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .sf-social a:hover {
+            background: var(--sf-accent);
+            border-color: var(--sf-accent);
+        }
+
+        .site-footer .sf-social a:hover .fa {
+            color: #ffffff;
+        }
+
+        .sf-cards {
+            margin-top: 6px;
+        }
+
+        .sf-cards img {
+            background: #ffffff;
+            border-radius: 3px;
+            padding: 3px 5px;
+            margin: 0 6px 6px 0;
+            max-height: 26px;
+        }
+
+        .sf-hours {
+            margin: 0;
+            color: #efefef;
+        }
+
+        /* membership / registration / review listings */
+        .sf-membership {
+            margin: 6px 0 34px;
+            clear: both;
+        }
+
+        .sf-badge {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 22px;
+        }
+
+        .sf-badge-img {
+            flex: 0 0 78px;
+            width: 78px;
+            height: 78px;
+            margin-right: 16px;
+            padding: 4px;
+            background: #ffffff;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sf-badge-img img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+
+        .sf-badge-txt h5 {
+            margin: 2px 0 5px;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.35;
+            text-transform: none;
+        }
+
+        .site-footer .sf-badge-txt h5 a {
+            color: #e8a33d;
+        }
+
+        .site-footer .sf-badge-txt h5 a:hover,
+        .site-footer .sf-badge-txt h5 a:focus {
+            color: var(--sf-accent);
+        }
+
+        .sf-badge-txt p {
+            margin: 0;
+            color: #c9c9c9;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* legal + copyright */
+        .sf-legal {
+            border-top: 1px solid var(--sf-border);
+            padding: 26px 0;
+            color: #a6a6a6;
+            clear: both;
+        }
+
+        .sf-legal p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin: 0 0 14px;
+        }
+
+        .sf-legal p:last-child {
+            margin-bottom: 0;
+        }
+
+        .sf-bottom {
+            background: #131313;
+            padding: 16px 0;
+            color: #9a9a9a;
+            clear: both;
+        }
+
+        .sf-bottom p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        /* Sticky Call Us / Send Enquiry bar is visible only below 992px
+           (its wrapper carries .hidden-md .hidden-lg). Keep it a single row so
+           its height stays constant, and reserve exactly that much space
+           under the copyright bar so nothing hides behind it. */
+        @media (max-width: 991px) {
+            .site-footer {
+                padding-bottom: calc(var(--sf-bar-h) + 24px);
+            }
+
+            .call-us.text-center {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .call-us .cs {
+                flex: 1 1 0;
+                max-width: 180px;
+                min-width: 0;
+                margin: 0;
+                padding: 6px 14px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .call-us .cs {
+                font-size: 13px;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .sf-links {
+                column-count: 1;
+            }
+
+            .sf-contact-item {
+                border-right: 0;
+                border-bottom: 1px solid var(--sf-border);
+            }
+
+            .sf-contact-item:last-child {
+                border-bottom: 0;
+            }
+        }
+    </style>
+
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <script src="js/modernizr.custom.js"></script>
 
@@ -71,9 +419,7 @@
 
 
 
-    <div class="whatsapp hidden-lg hidden-md hidden-md"><a href="https://api.whatsapp.com/send?phone=919990349246"><img
-                src="images/whatsapp.png" style="padding:0px;">
-        </a>
+    <div class="hidden-lg hidden-md hidden-md">
 
         <div class="call-us text-center">
             <a href="tel:+91 9990349246" class="btn btn-default cs">Call Us</a>
@@ -918,104 +1264,204 @@
         </div>
     </section>
 
-    <footer style="padding: 30px 0 60px;">
+    <footer class="site-footer">
         <div class="container">
 
-            <div class="col-md-4">
-                <h5>Company Information</h5>
-                <p>
-                    <strong>Trade Name:</strong> The Indian Voyage<br>
-                    <strong>Registered Company Name:</strong> Green View Voyage Private Limited<br>
-                    <strong>CIN:</strong> U63040DL2010PTC201816<br>
-                    <strong>GST Number:</strong> 09AADCG7959A1ZH<br>
-                    <strong>Head Office:</strong> Floor No 7, 701, Tower-1, Assotech Business Cresterra, Plot No 22,
-                    Sector-135, Noida, Uttar Pradesh - 201305<br>
-                    <strong>Customer Support:</strong> <a
-                        href="mailto:tours@theindianvoyage.com">tours@theindianvoyage.com</a><br>
-                    <strong>Phone:</strong><br>
-                    Pardeep Kapoor <a href="tel:+919268565534">+91 9268565534</a><br>
-                    Saurabh Agrawal <a href="tel:+919990349246">+91 9990349246</a><br>
-                    <strong>Business Hours:</strong> Monday - Saturday, 10:00 AM - 6:30 PM (IST)
-                </p>
-            </div>
-
-            <div class="col-md-3">
-                <h5>Useful Links</h5>
-                <ul>
-                    <li>- <a href="index.html">Home</a></li>
-                    <li>- <a href="about_dhikala.html">About Dhikala</a></li>
-                    <li>- <a href="contact_us.html">Contact Us</a></li>
-                    <li>- <a href="enquiry.html">Tour Enquiry</a></li>
-                    <li>- <a href="member-details.html">Members Detail Form</a></li>
-                    <li>- <a href="site-map.html">Site Map</a></li>
-                    <li>- <a href="frequently-asked-questions.html">FAQ</a></li>
-                    <li>- <a href="disclaimer.html">Disclaimer</a></li>
-                    <li>- <a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li>- <a href="cancellation-policy.html">Cancellation Policy</a></li>
-                    <li>- <a href="terms-and-conditions.html">Terms & Conditions</a></li>
-                </ul>
-            </div>
-
-
-
-
-            <div class="col-md-4 ">
-                <h5>Social With Us</h5>
-                <ul class="social">
-                    <li><a href="https://www.facebook.com/TheindianvoyageTIV/" target="_blank"><i
-                                class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/the.indianvoyage/" target="_blank">
-                            <i class="fa fa-instagram"></i></a></li>
-                    <li><a href="https://www.youtube.com/@travel.theindianvoyage" target="_blank">
-                            <i class="fa fa-youtube-play"></i>
-                        </a></li>
-                </ul><br>
-                <br>
-
-
-                <div style="float:left">
-                    <h5>All major cards accepted &nbsp;<br></h5>
-                    <img src="images/mastercard.png"> &nbsp;<img src="images/visa.gif">&nbsp;&nbsp;<img
-                        src="images/americanEx.gif">
+            <!-- Contact strip -->
+            <div class="sf-contact">
+                <div class="sf-contact-item">
+                    <span class="sf-label"><i class="fa fa-map-marker"></i>Address</span>
+                    <p>Floor No 7, 701, Tower-1, Assotech Business Cresterra, Plot No 22, Sector-135, Noida, Uttar
+                        Pradesh - 201305</p>
+                </div>
+                <div class="sf-contact-item">
+                    <span class="sf-label"><i class="fa fa-phone"></i>Phone Number</span>
+                    <p>
+                        Pardeep Kapoor <a href="tel:+919268565534">+91 9268565534</a><br>
+                        Saurabh Agrawal <a href="tel:+919990349246">+91 9990349246</a>
+                    </p>
+                </div>
+                <div class="sf-contact-item">
+                    <span class="sf-label"><i class="fa fa-envelope"></i>Email Address</span>
+                    <p><a href="mailto:tours@theindianvoyage.com">tours@theindianvoyage.com</a></p>
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-4 sf-col">
+                    <h4 class="sf-title">Trade Name</h4>
+                    <ul class="sf-info">
+                        <li><span>Trade Name</span>The Indian Voyage</li>
+                        <li><span>Registered Company Name</span>Green View Voyage Private Limited</li>
+                        <li><span>CIN</span>U63040DL2010PTC201816</li>
+                        <li><span>GST Number</span>09AADCG7959A1ZH</li>
+                    </ul>
+                </div>
 
+                <div class="col-md-4 sf-col">
+                    <h4 class="sf-title">Useful Links</h4>
+                    <ul class="sf-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about_dhikala.html">About Dhikala</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                        <li><a href="enquiry.html">Tour Enquiry</a></li>
+                        <li><a href="member-details.html">Members Detail Form</a></li>
+                        <li><a href="site-map.html">Site Map</a></li>
+                        <li><a href="frequently-asked-questions.html">FAQ</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="cancellation-policy.html">Cancellation Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
 
+                <div class="col-md-4 sf-col">
+                    <h4 class="sf-title">Follow Us</h4>
+                    <ul class="sf-social">
+                        <li><a href="https://www.facebook.com/TheindianvoyageTIV/" target="_blank" title="Facebook"><i
+                                    class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/the.indianvoyage/" target="_blank" title="Instagram"><i
+                                    class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/@travel.theindianvoyage" target="_blank" title="YouTube"><i
+                                    class="fa fa-youtube-play"></i></a></li>
+                    </ul>
 
+                    <h4 class="sf-title">Business Hours</h4>
+                    <p class="sf-hours">Monday - Saturday, 10:00 AM - 6:30 PM (IST)</p>
 
+                    <h4 class="sf-title" style="margin-top: 24px;">All major cards accepted</h4>
+                    <div class="sf-cards">
+                        <img src="images/mastercard.png" alt="Mastercard">
+                        <img src="images/visa.gif" alt="Visa">
+                        <img src="images/americanEx.gif" alt="American Express">
+                    </div>
+                </div>
+            </div>
+
+            <div class="sf-membership">
+                <h4 class="sf-title">Membership , Registration &amp; Review Listings</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="sf-badge">
+                            <a class="sf-badge-img"
+                                href="https://www.tripadvisor.com/Attraction_Review-g644043-d16801210-Reviews-The_Indian_Voyage-Noida_Gautam_Buddha_Nagar_District_Uttar_Pradesh.html"
+                                target="_blank" rel="noopener">
+                                <img src="images/affiliations/affilations-2.png" alt="TripAdvisor">
+                            </a>
+                            <div class="sf-badge-txt">
+                                <h5><a href="https://www.tripadvisor.com/Attraction_Review-g644043-d16801210-Reviews-The_Indian_Voyage-Noida_Gautam_Buddha_Nagar_District_Uttar_Pradesh.html"
+                                        target="_blank" rel="noopener">TripAdvisor</a></h5>
+                                <p>TripAdvisor Reviews &amp; Ratings</p>
+                            </div>
+                        </div>
+
+                        <div class="sf-badge">
+                            <a class="sf-badge-img"
+                                href="https://theindianvoyage.com/wp-content/uploads/2026/05/iato-membership-1.jpg"
+                                target="_blank" rel="noopener">
+                                <img src="images/affiliations/affilations-4.png"
+                                    alt="IATO Membership Certificate">
+                            </a>
+                            <div class="sf-badge-txt">
+                                <h5><a href="https://theindianvoyage.com/wp-content/uploads/2026/05/iato-membership-1.jpg"
+                                        target="_blank" rel="noopener">IATO Membership Certificate</a></h5>
+                                <p>(Member ID: ALD240912)</p>
+                            </div>
+                        </div>
+
+                        <div class="sf-badge">
+                            <a class="sf-badge-img"
+                                href="https://theindianvoyage.com/wp-content/uploads/2026/05/MSME-Udyam-Registration-Certificate-GVVPL-NEW-1.pdf"
+                                target="_blank" rel="noopener">
+                                <img src="images/affiliations/affilations-3.png"
+                                    alt="Udyam Registration Certificate">
+                            </a>
+                            <div class="sf-badge-txt">
+                                <h5><a href="https://theindianvoyage.com/wp-content/uploads/2026/05/MSME-Udyam-Registration-Certificate-GVVPL-NEW-1.pdf"
+                                        target="_blank" rel="noopener">Udyam Registration Certificate</a></h5>
+                                <p>(UDYAM-UP-28-0044227)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="sf-badge">
+                            <a class="sf-badge-img"
+                                href="https://theindianvoyage.com/wp-content/uploads/2026/05/Nidhi-Certificate.pdf"
+                                target="_blank" rel="noopener">
+                                <img src="images/affiliations/nidhi-300x300.png" alt="NIDHI">
+                            </a>
+                            <div class="sf-badge-txt">
+                                <h5><a href="https://theindianvoyage.com/wp-content/uploads/2026/05/Nidhi-Certificate.pdf"
+                                        target="_blank" rel="noopener">NIDHI</a></h5>
+                                <p>NIDHI Govt. Registration Certificate</p>
+                            </div>
+                        </div>
+
+                        <div class="sf-badge">
+                            <a class="sf-badge-img"
+                                href="https://theindianvoyage.com/wp-content/uploads/2026/08/gst-gvvpl.pdf"
+                                target="_blank" rel="noopener">
+                                <img src="images/affiliations/gst-registration-services-300x300.png"
+                                    alt="GST Registration Certificate">
+                            </a>
+                            <div class="sf-badge-txt">
+                                <h5><a href="https://theindianvoyage.com/wp-content/uploads/2026/08/gst-gvvpl.pdf"
+                                        target="_blank" rel="noopener">GST Registration Certificate</a></h5>
+                                <p>(09AADCG7959A1ZH)</p>
+                            </div>
+                        </div>
+
+                        <div class="sf-badge">
+                            <a class="sf-badge-img"
+                                href="https://search.google.com/local/reviews?placeid=ChIJVVVVFanmDDkRZHG6ho5JEoY"
+                                target="_blank" rel="noopener">
+                                <img src="images/affiliations/Google-Review-Logo-300x169.png" alt="Google Reviews">
+                            </a>
+                            <div class="sf-badge-txt">
+                                <h5><a href="https://search.google.com/local/reviews?placeid=ChIJVVVVFanmDDkRZHG6ho5JEoY"
+                                        target="_blank" rel="noopener">Google Reviews</a></h5>
+                                <p>Google Business Profile reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sf-legal">
+                <p>
+                    <a href="https://www.dhikala-corbett.com/" target="_blank">Dhikala-Corbett.com</a> is not the official
+                    website of Corbett Tiger Reserve, Bijrani Forest Rest House, Forest Department of Uttarakhand, or any
+                    Government authority. This website is owned by The Indian Voyage (a unit of Green View Voyage Pvt.
+                    Ltd.). The Indian Voyage (a unit of Green View Voyage Pvt. Ltd.) is an independent private travel
+                    company and does not represent, operate, or act on behalf of any government agency, wildlife reserve, or
+                    statutory authority.
+                </p>
+                <p>
+                    We specialise in designing and operating complete, end-to-end wildlife tour packages that may include
+                    resort accommodation, jungle safari permits, local transportation, sightseeing, and other travel-related
+                    services. Rather than offering standalone forest rest house night stay permit booking or standalone
+                    safari permit bookings, we arrange these services as integral components of our comprehensive tour
+                    packages, providing our guests with a seamless wildlife travel experience.
+                </p>
+                <p>
+                    All tour packages featured on this website are independently curated and managed by The Indian Voyage.
+                    All booking inquiries, package customization, customer support, payment processing, and legal contracts
+                    are handled exclusively by Green View Voyage Pvt. Ltd. (CIN: U63040DL2010PTC201816).
+                </p>
+            </div>
         </div>
 
-        <div class="container" style="clear: both; padding-top: 20px;">
-            <p style="font-size: 13px; line-height: 1.6; margin: 0 0 20px; text-align: left;">
-                <a href="https://www.dhikala-corbett.com/" target="_blank">Dhikala-Corbett.com</a> is not the official
-                website of Corbett Tiger Reserve, Bijrani Forest Rest House, Forest Department of Uttarakhand, or any
-                Government authority. This website is owned by The Indian Voyage (a unit of Green View Voyage Pvt.
-                Ltd.). The Indian Voyage (a unit of Green View Voyage Pvt. Ltd.) is an independent private travel
-                company and does not represent, operate, or act on behalf of any government agency, wildlife reserve, or
-                statutory authority.
-            </p>
-            <p style="font-size: 13px; line-height: 1.6; margin: 0 0 20px; text-align: left;">
-                We specialise in designing and operating complete, end-to-end wildlife tour packages that may include
-                resort accommodation, jungle safari permits, local transportation, sightseeing, and other travel-related
-                services. Rather than offering standalone forest rest house night stay permit booking or standalone
-                safari permit bookings, we arrange these services as integral components of our comprehensive tour
-                packages, providing our guests with a seamless wildlife travel experience.
-            </p>
-            <p style="font-size: 13px; line-height: 1.6; margin: 0; text-align: left;">
-                All tour packages featured on this website are independently curated and managed by The Indian Voyage.
-                All booking inquiries, package customization, customer support, payment processing, and legal contracts
-                are handled exclusively by Green View Voyage Pvt. Ltd. (CIN: U63040DL2010PTC201816).
-            </p>
+        <div class="sf-bottom">
+            <div class="container">
+                <p>Copyright &copy; 2026 All Right Reserved, M/s Green View Voyage Private Limited</p>
+            </div>
         </div>
 
-        <div>
-            <!-- End Footer -->
-            <a style="padding: 15px;" href="https://api.whatsapp.com/send?phone=919990349246" class="whatsapp"><img
-                    src="images/whatsapp-1.png"></a>
+        <a style="padding: 15px;" href="https://api.whatsapp.com/send?phone=919990349246" class="whatsapp"><img
+                src="images/whatsapp-1.png"></a>
 
-            <a class='scrollup' href='#top' title='back to top'>Back to Top</a>
-        </div>
+        <a class='scrollup' href='#top' title='back to top'>Back to Top</a>
     </footer>
 
 
