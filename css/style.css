@@ -835,3 +835,352 @@ form#safari-form h3 {
 }
 
 .navbar-default .navbar-toggle .icon-bar{margin-left:2px;}
+
+/* ==========================================================================
+   Site footer (.site-footer) - shared across all pages
+   Moved out of index.html's inline style block so every page shares one copy.
+   ========================================================================== */
+        .site-footer {
+            --sf-bg: #1d1d1d;
+            --sf-bg-alt: #252525;
+            --sf-text: #d5d5d5;
+            --sf-heading: #ffffff;
+            --sf-accent: #e8a33d;
+            --sf-border: rgba(255, 255, 255, 0.12);
+            /* height of the sticky Call Us / Send Enquiry bar (<=991px only) */
+            --sf-bar-h: 54px;
+
+            background: var(--sf-bg);
+            color: var(--sf-text);
+            padding: 45px 0 24px;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        }
+
+        .site-footer p,
+        .site-footer li {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .site-footer a {
+            color: var(--sf-text);
+            transition: color .25s ease;
+        }
+
+        .site-footer a:hover,
+        .site-footer a:focus {
+            color: var(--sf-accent);
+            text-decoration: none;
+        }
+
+        .site-footer .sf-title {
+            color: var(--sf-heading);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            margin: 0 0 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--sf-border);
+            position: relative;
+        }
+
+        .site-footer .sf-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 45px;
+            height: 2px;
+            background: var(--sf-accent);
+        }
+
+        /* top contact strip */
+        .sf-contact {
+            display: flex;
+            flex-wrap: wrap;
+            background: var(--sf-bg-alt);
+            border: 1px solid var(--sf-border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .sf-contact-item {
+            flex: 1 1 33.33%;
+            min-width: 250px;
+            padding: 22px 26px;
+            border-right: 1px solid var(--sf-border);
+        }
+
+        .sf-contact-item:last-child {
+            border-right: 0;
+        }
+
+        .sf-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--sf-accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        .sf-label .fa {
+            color: var(--sf-accent);
+            font-size: 14px;
+            margin-right: 7px;
+        }
+
+        .sf-contact-item p {
+            margin: 0;
+            color: #efefef;
+        }
+
+        .sf-contact-item a {
+            display: inline-block;
+        }
+
+        /* main columns */
+        .sf-col {
+            margin-bottom: 32px;
+        }
+
+        .sf-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sf-info li {
+            padding: 0 0 10px;
+            margin: 0 0 10px;
+            border-bottom: 1px dashed var(--sf-border);
+        }
+
+        .sf-info li:last-child {
+            border-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .sf-info span {
+            display: block;
+            margin-bottom: 2px;
+            color: #8f8f8f;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .sf-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            column-count: 2;
+            column-gap: 28px;
+        }
+
+        .sf-links li {
+            break-inside: avoid;
+            margin-bottom: 10px;
+        }
+
+        .sf-links a::before {
+            content: "\f105";
+            font-family: FontAwesome;
+            color: var(--sf-accent);
+            margin-right: 8px;
+        }
+
+        .sf-social {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            display: flex;
+        }
+
+        .sf-social li {
+            margin-right: 10px;
+        }
+
+        .sf-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--sf-border);
+            border-radius: 50%;
+            transition: all .25s ease;
+        }
+
+        .site-footer .sf-social a .fa {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .sf-social a:hover {
+            background: var(--sf-accent);
+            border-color: var(--sf-accent);
+        }
+
+        .site-footer .sf-social a:hover .fa {
+            color: #ffffff;
+        }
+
+        .sf-cards {
+            margin-top: 6px;
+        }
+
+        .sf-cards img {
+            background: #ffffff;
+            border-radius: 3px;
+            padding: 3px 5px;
+            margin: 0 6px 6px 0;
+            max-height: 26px;
+        }
+
+        .sf-hours {
+            margin: 0;
+            color: #efefef;
+        }
+
+        /* membership / registration / review listings */
+        .sf-membership {
+            margin: 6px 0 34px;
+            clear: both;
+        }
+
+        .sf-badge {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 22px;
+        }
+
+        .sf-badge-img {
+            flex: 0 0 78px;
+            width: 78px;
+            height: 78px;
+            margin-right: 16px;
+            padding: 4px;
+            background: #ffffff;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sf-badge-img img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+
+        .sf-badge-txt h5 {
+            margin: 2px 0 5px;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.35;
+            text-transform: none;
+        }
+
+        .site-footer .sf-badge-txt h5 a {
+            color: #e8a33d;
+        }
+
+        .site-footer .sf-badge-txt h5 a:hover,
+        .site-footer .sf-badge-txt h5 a:focus {
+            color: var(--sf-accent);
+        }
+
+        .sf-badge-txt p {
+            margin: 0;
+            color: #c9c9c9;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* legal + copyright */
+        .sf-legal {
+            border-top: 1px solid var(--sf-border);
+            padding: 26px 0;
+            color: #a6a6a6;
+            clear: both;
+        }
+
+        .sf-legal p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin: 0 0 14px;
+        }
+
+        .sf-legal p:last-child {
+            margin-bottom: 0;
+        }
+
+        .sf-bottom {
+            background: #131313;
+            padding: 16px 0;
+            color: #9a9a9a;
+            clear: both;
+        }
+
+        .sf-bottom p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        /* Sticky Call Us / Send Enquiry bar is visible only below 992px
+           (its wrapper carries .hidden-md .hidden-lg). Keep it a single row so
+           its height stays constant, and reserve exactly that much space
+           under the copyright bar so nothing hides behind it. */
+        @media (max-width: 991px) {
+            .site-footer {
+                padding-bottom: calc(var(--sf-bar-h) + 24px);
+            }
+
+            .call-us.text-center {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .call-us .cs {
+                flex: 1 1 0;
+                max-width: 180px;
+                min-width: 0;
+                margin: 0;
+                padding: 6px 14px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .call-us .cs {
+                font-size: 13px;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .sf-links {
+                column-count: 1;
+            }
+
+            .sf-contact-item {
+                border-right: 0;
+                border-bottom: 1px solid var(--sf-border);
+            }
+
+            .sf-contact-item:last-child {
+                border-bottom: 0;
+            }
+        }
