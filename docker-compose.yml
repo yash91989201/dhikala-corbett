@@ -1,0 +1,15 @@
+services:
+  site:
+    build: .
+    image: dhikala-corbett:local
+    container_name: dhikala-corbett-local
+    ports:
+      # Site is at http://localhost:8080
+      - "8080:80"
+    volumes:
+      # Live edit: change a file on the host, reload the browser -- no rebuild.
+      # If you hit 403 again, the docroot must be traversable by other users:
+      #   chmod 755 ~/Projects/dhikala-corbett
+      # Drop the ":ro" if you later add PHP forms that need to write files.
+      - ./:/usr/share/nginx/html:ro
+    restart: unless-stopped
