@@ -1,0 +1,49 @@
+# OS / filesystem junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+.~lock.*#
+
+# Secrets and local credentials (never commit these)
+.env
+.env.*
+!.env.example
+.netrc
+.ftpconfig
+*.pem
+*.key
+*.p12
+deploy/.env
+
+# Deploy artifacts
+deploy/_ftp_backup/
+deploy/*.log
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Local tooling / caches
+node_modules/
+.cache/
+.sass-cache/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
