@@ -1,0 +1,52 @@
+# Files to upload - generated from git history (2a18d07..HEAD)
+# 37 live pages + css/style.css + sitemap/urllist + 6 new footer images
+--- required ---
+about_dhikala.html
+Cancellation-Policy.html
+contact_us.html
+dhikala-especial-package.html
+disclaimer.html
+enquiry.html
+forest-rest-house-photo-gallery.html
+frequently-asked-questions.html
+index.html
+kalakhand.html
+kalakhand-package.html
+member-details.html
+on-the-trails-of-jim-corbett.html
+our_team.html
+outlook_traveller.html
+privacy-policy.html
+serenity-of-a-pristine-forest.html
+site-map.html
+terms-and-conditions.html
+thankyou.html
+travel_info.html
+about-us.html
+forest-rest-house/dhikala-forest-rest-house.html
+forest-rest-house/dhikala-photo-gallery.html
+forest-rest-house/gairal-forest-rest-house.html
+forest-rest-house/gairal-photo-gallery.html
+forest-rest-house/index.html
+forest-rest-house/khinna-nauli-forest-rest-house.html
+forest-rest-house/khinna-nauli-photo-gallery.html
+forest-rest-house/sarapduli-photo-gallery.html
+forest-rest-house/sarapdulli-forest-rest-house.html
+forest-rest-house/sultan-forest-rest-house.html
+forest-rest-house/sultan-photo-gallery.html
+dhikala-packages/1night-package.html
+dhikala-packages/2nights-package.html
+dhikala-packages/3nights-package.html
+dhikala-packages/index.html
+css/style.css
+sitemap.xml
+urllist.txt
+images/affiliations/Google-Review-Logo-300x169.png
+images/affiliations/affilations-2.png
+images/affiliations/affilations-3.png
+images/affiliations/affilations-4.png
+images/affiliations/gst-registration-services-300x300.png
+images/affiliations/nidhi-300x300.png
+--- optional (not linked from anywhere; only if the remote has them) ---
+kalakhand-packageold.html
+enquiry.html21212
