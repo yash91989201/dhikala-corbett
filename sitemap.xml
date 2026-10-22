@@ -23,6 +23,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://dhikala-corbett.com/about-us.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://dhikala-corbett.com/about_dhikala.html</loc>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
