@@ -602,7 +602,7 @@
         .tsr .divider { margin: 24px 0 0; }
         .tsr-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 32px; align-items: start; }
 
-        .tsr-proof { background: #26332c; border-radius: 14px; padding: 28px 26px; color: #f4f2ee; box-shadow: 0 12px 28px rgba(20,28,24,.16); }
+        .tsr-proof { background: #26332c; border: 1px solid rgba(244,242,238,.16); border-radius: 14px; padding: 28px 24px; color: #f4f2ee; box-shadow: 0 12px 28px rgba(20,28,24,.16); }
         .tsr-proof-label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(244,242,238,.66); }
         .tsr-proof-score { display: flex; align-items: center; gap: 14px; margin: 10px 0 8px; }
         .tsr-proof-score strong { font-size: 54px; font-weight: 700; line-height: .95; letter-spacing: -1px; color: #fff; }
@@ -638,7 +638,7 @@
         .tsr-sort select:hover { border-color: #26332c; }
         .tsr-sort select::-ms-expand { display: none; }
 
-        .tsr-proof .tsr-controls { flex-direction: column; align-items: stretch; gap: 14px; margin: 0 0 20px; padding: 0 0 18px; border-top: 0; border-bottom: 1px solid rgba(244,242,238,.16); }
+        .tsr-proof .tsr-controls { flex-direction: column; align-items: stretch; gap: 14px; margin: 18px 0 0; padding: 16px 0 0; border: 0; border-top: 1px solid rgba(244,242,238,.16); }
         .tsr-proof .tsr-chip { border-color: rgba(244,242,238,.32); color: #f4f2ee; padding: 7px 11px; font-size: 12px; }
         .tsr-proof .tsr-chip span { color: rgba(244,242,238,.55); }
         .tsr-proof .tsr-chip:hover { border-color: #f4f2ee; color: #fff; }
@@ -648,35 +648,49 @@
         .tsr-proof .tsr-sort select { background-color: #f4f2ee; border-color: #f4f2ee; color: #26332c; }
         .tsr-proof .tsr-sort select:hover { border-color: #f79a63; }
 
-        .tsr-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-        .tsr-card { display: flex; background: #fff; border: 1px solid #e4ded4; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(38,51,44,.05); }
-        .tsr-card-inner { display: flex; flex-direction: column; width: 100%; min-width: 0; }
-        .tsr-lead-main { display: flex; flex-direction: column; flex: 1 1 auto; min-width: 0; padding: 22px 24px; }
-        .tsr-rate { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-        .tsr-rate .tsr-stars i { font-size: 12px; }
-        .tsr-rate .tsr-stars .is-empty { color: #ddd6ca; }
-        .tsr-rate b { font-size: 12px; color: #26332c; }
-        .tsr-src { margin-left: auto; font-size: 11px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase; color: #6b6459; }
-        .tsr-card-title { font-family: Georgia, 'Times New Roman', serif; font-size: 21px; font-weight: 600; line-height: 1.28; letter-spacing: .1px; color: #1f2a24; text-transform: none; text-align: left; margin: 0 0 8px; }
-        .tsr-card-text { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; font-size: 14px; line-height: 1.65; color: #5f594f; margin: 0 0 18px; }
-        .tsr-foot { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 14px; border-top: 1px solid #efe9df; }
-        .tsr-avatar { width: 36px; height: 36px; flex: 0 0 36px; border-radius: 50%; background: #fdeee3; color: #9a4a12; display: flex; align-items: center; justify-content: center; font-size: 11.5px; font-weight: 700; letter-spacing: .4px; }
-        .tsr-author { min-width: 0; }
-        .tsr-author strong { display: block; font-size: 12.5px; font-weight: 600; line-height: 1.3; color: #26332c; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .tsr-author span { display: block; font-size: 12px; line-height: 1.4; color: #6b6459; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .tsr-ago { margin-left: auto; align-self: flex-start; padding-top: 2px; font-size: 11.5px; color: #6b6459; white-space: nowrap; }
-        .tsr-media { position: relative; order: -1; flex: 0 0 152px; height: 152px; overflow: hidden; background: #e9e4da; }
-        .tsr-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-
+        .tsr-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+        .tsr-card { min-width: 0; }
         .tsr-card.is-lead { grid-column: 1 / -1; }
-        .tsr-card.is-lead .tsr-lead-main { padding: 30px 32px; }
-        .tsr-card.is-lead .tsr-card-title { font-size: 31px; line-height: 1.18; margin-bottom: 10px; }
-        .tsr-card.is-lead .tsr-card-text { -webkit-line-clamp: 6; font-size: 16px; line-height: 1.7; margin-bottom: 22px; }
-        .tsr-card.is-lead .tsr-media { flex: 0 0 240px; height: 240px; }
+
+        /* Review screenshot. The bottom bar blurs the image under it (masked backdrop-filter)
+           so the name and actions stay readable over any screenshot. */
+        /* Fixed frame keeps every tile the same height. The screenshot is drawn at full width from
+           the top, so wide shots leave a gap the bottom bar covers and tall shots crop below it. */
+        .tsr-shot { position: relative; display: block; aspect-ratio: 1.15; background: #fff; border: 1px solid #e4ded4; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(38,51,44,.05); }
+        .tsr-card.is-lead .tsr-shot { aspect-ratio: auto; }
+        .tsr-shot-open { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #fff; overflow: hidden; cursor: zoom-in; }
+        .tsr-card.is-lead .tsr-shot-open { height: auto; }
+        .tsr-shot-open img { display: block; width: 100%; height: auto; }
+        .tsr-shot-open:focus-visible { outline: 2px solid #f77222; outline-offset: -3px; }
+        .tsr-shot-bar { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 76px 14px 15px; background: linear-gradient(to top, rgba(10,16,13,.95) 0%, rgba(10,16,13,.92) 18%, rgba(10,16,13,.8) 32%, rgba(10,16,13,.6) 46%, rgba(10,16,13,.4) 60%, rgba(10,16,13,.23) 72%, rgba(10,16,13,.11) 83%, rgba(10,16,13,.03) 93%, rgba(10,16,13,0) 100%); }
+        .tsr-shot-bar::before { content: ""; position: absolute; inset: -8px 0 0; -webkit-backdrop-filter: blur(22px) saturate(115%); backdrop-filter: blur(22px) saturate(115%); -webkit-mask-image: linear-gradient(to top, #000 0%, #000 16%, rgba(0,0,0,.94) 28%, rgba(0,0,0,.8) 40%, rgba(0,0,0,.62) 52%, rgba(0,0,0,.42) 64%, rgba(0,0,0,.24) 76%, rgba(0,0,0,.1) 87%, transparent 100%); mask-image: linear-gradient(to top, #000 0%, #000 16%, rgba(0,0,0,.94) 28%, rgba(0,0,0,.8) 40%, rgba(0,0,0,.62) 52%, rgba(0,0,0,.42) 64%, rgba(0,0,0,.24) 76%, rgba(0,0,0,.1) 87%, transparent 100%); }
+        .tsr-shot-who, .tsr-shot-acts { position: relative; }
+        .tsr-shot-who { display: flex; align-items: center; gap: 10px; flex: 1 1 auto; min-width: 0; font-size: 19px; line-height: 1.2; color: #fff; text-shadow: 0 1px 5px rgba(0,0,0,.6); }
+        .tsr-shot-who b { font-weight: 700; letter-spacing: .1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .tsr-shot-acts { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+        .tsr-shot-btn { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; background: #fff; color: #26332c; font-size: 11.5px; font-weight: 700; line-height: 1; text-decoration: none; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.24); transition: background-color .2s, color .2s; }
+        .tsr-shot-btn i { font-size: 13px; font-weight: 700; -webkit-text-stroke: .5px currentColor; }
+        .tsr-shot-btn:hover, .tsr-shot-btn:focus-visible { background: #f77222; color: #fff; }
+        .tsr-shot-btn:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
         .tsr-empty { text-align: center; color: #6b6459; padding: 24px 0 0; }
         .tsr-card.is-in { animation: tsr-in .32s cubic-bezier(.22,1,.36,1) both; }
         @keyframes tsr-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
         @media (prefers-reduced-motion: reduce) { .tsr-card.is-in { animation: none; } }
+
+        /* Expanded review. z-index clears the site's fixed call-us bar / whatsapp button (200000000). */
+        .tsr-modal { position: fixed; inset: 0; z-index: 200000001; display: flex; align-items: center; justify-content: center; padding: 24px; }
+        .tsr-modal[hidden] { display: none; }
+        .tsr-modal-backdrop { position: absolute; inset: 0; background: rgba(14,22,18,.62); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+        .tsr-modal-panel { position: relative; display: flex; flex-direction: column; width: min(880px, 100%); max-height: min(92vh, 100%); background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+        .tsr-modal-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px 12px 18px; border-bottom: 1px solid #efe9df; }
+        .tsr-modal-name { margin: 0; font-size: 13px; font-weight: 600; line-height: 1.3; color: #26332c; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .tsr-modal-x { flex: 0 0 auto; width: 34px; height: 34px; border: 0; border-radius: 50%; background: #f4f2ee; color: #26332c; font-size: 20px; line-height: 1; cursor: pointer; }
+        .tsr-modal-x:hover, .tsr-modal-x:focus-visible { background: #26332c; color: #fff; outline: none; }
+        .tsr-modal-body { flex: 1 1 auto; overflow: auto; -webkit-overflow-scrolling: touch; }
+        .tsr-modal-body img { display: block; width: 100%; height: auto; }
+        .tsr-modal-foot { padding: 10px 18px; border-top: 1px solid #efe9df; text-align: right; }
+        .tsr-modal-link { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 600; color: #26332c; text-decoration: underline; text-underline-offset: 4px; }
+        .tsr-modal-link:hover, .tsr-modal-link:focus { color: #f77222; }
 
         @media (min-width: 992px) {
             .tsr-proof { position: sticky; top: calc(var(--tsr-nav, 148px) + 12px); }
@@ -684,13 +698,23 @@
         @media (max-width: 1199px) {
             .tsr-layout { grid-template-columns: 270px minmax(0, 1fr); gap: 26px; }
         }
+        @media (min-width: 768px) and (max-width: 991px) {
+            .tsr-shot-who { font-size: 16px; gap: 8px; }
+            .tsr-shot-btn { width: 30px; height: 30px; }
+            .tsr-shot-btn i { font-size: 12px; }
+        }
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .tsr-shot-bar { padding: 64px 11px 12px; }
+            .tsr-shot-btn { width: 28px; height: 28px; }
+            .tsr-shot-btn i { font-size: 11px; }
+            .tsr-shot-who { font-size: 15px; gap: 7px; }
+        }
         @media (max-width: 991px) {
             .tsr-layout { grid-template-columns: 1fr; gap: 28px; }
             .tsr-proof { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; padding: 24px 26px; }
             .tsr-proof-top { grid-column: 1; grid-row: 1; }
             .tsr-bars { grid-column: 2; grid-row: 1 / span 2; align-self: start; margin-top: 0; padding-top: 0; border-top: 0; border-left: 1px solid rgba(244,242,238,.16); padding-left: 32px; }
             .tsr-proof-foot { grid-column: 1; grid-row: 2; margin-top: 16px; padding-top: 16px; border-top: 0; }
-            .tsr-card.is-lead .tsr-card-title { font-size: 27px; }
             .tsr-results > .tsr-controls { position: sticky; top: var(--tsr-nav, 100px); z-index: 6; background: #f4f2ee; padding: 12px 16px; margin: -12px 0 12px; border-bottom: 1px solid #e6e1d9; box-shadow: 0 14px 18px -16px rgba(31,42,36,.55); }
         }
         @media (max-width: 767px) {
@@ -706,11 +730,21 @@
             .tsr-chip { font-size: 12px; padding: 7px 11px; }
             .tsr-sort { justify-content: space-between; }
             .tsr-grid { grid-template-columns: 1fr; gap: 14px; }
-            .tsr-lead-main { padding: 20px; }
-            .tsr-card.is-lead .tsr-media { flex: 0 0 180px; height: 180px; }
-            .tsr-media { flex-basis: 140px; height: 140px; }
-            .tsr-card.is-lead .tsr-card-title { font-size: 25px; }
-            .tsr-card.is-lead .tsr-card-text { display: block; -webkit-line-clamp: unset; font-size: 15px; }
+            .tsr-shot-btn { width: 32px; height: 32px; }
+            .tsr-shot-bar { padding: 64px 12px 13px; }
+            .tsr-shot-who { font-size: 16px; gap: 8px; }
+            .tsr-modal { padding: 0; }
+            .tsr-modal-panel { width: 100%; height: 100%; max-height: none; border-radius: 0; }
+            .tsr-modal-body { display: flex; align-items: center; justify-content: center; }
+            .tsr-modal-body img { width: 100%; }
+        }
+        @media (max-width: 379px) {
+            .tsr-shot-bar { padding: 52px 10px 11px; gap: 8px; }
+            .tsr-shot-btn { width: 28px; height: 28px; }
+            .tsr-shot-btn i { font-size: 11px; }
+            .tsr-shot-who { font-size: 14px; gap: 6px; }
+            .tsr-modal-head { padding: 10px 10px 10px 12px; }
+            .tsr-modal-foot { padding: 8px 12px; }
         }
     </style>
 
@@ -724,37 +758,34 @@
 
             <div class="tsr-layout">
                 <aside class="tsr-proof" aria-labelledby="tsr-proof-label">
-                    <div class="tsr-controls">
-                        <div class="tsr-filter" role="group" aria-label="Filter reviews by traveller origin">
-                            <button type="button" class="tsr-chip is-active" data-filter="all" aria-pressed="true">All reviews <span>8</span></button>
-                            <button type="button" class="tsr-chip" data-filter="international" aria-pressed="false">International <span>2</span></button>
-                            <button type="button" class="tsr-chip" data-filter="india" aria-pressed="false">From India <span>6</span></button>
-                        </div>
-                        <label class="tsr-sort" for="tsr-sort">Sort by
-                            <select id="tsr-sort">
-                                <option value="featured">Featured</option>
-                                <option value="newest">Newest first</option>
-                                <option value="oldest">Oldest first</option>
-                                <option value="rating">Highest rated</option>
-                            </select>
-                        </label>
-                    </div>
                     <div class="tsr-proof-top">
                         <span class="tsr-proof-label" id="tsr-proof-label">TripAdvisor rating</span>
                         <div class="tsr-proof-score">
-                            <strong>4.6</strong>
-                            <span class="tsr-stars" role="img" aria-label="Rated 4.6 out of 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i></span>
+                            <strong id="tsr-avg">4.6</strong>
+                            <span class="tsr-stars" id="tsr-avg-stars" role="img" aria-label="Rated 4.6 out of 5"></span>
                         </div>
-                        <p class="tsr-proof-note">8 verified reviews from travellers who stayed at Dhikala.</p>
+                        <p class="tsr-proof-note" id="tsr-note">10 verified reviews from travellers who stayed at Dhikala.</p>
+                        <div class="tsr-controls">
+                            <div class="tsr-filter" role="group" aria-label="Filter reviews by traveller origin">
+                                <button type="button" class="tsr-chip is-active" data-filter="all" aria-pressed="true">All reviews <span></span></button>
+                                <button type="button" class="tsr-chip" data-filter="international" aria-pressed="false">International <span></span></button>
+                                <button type="button" class="tsr-chip" data-filter="india" aria-pressed="false">From India <span></span></button>
+                            </div>
+                            <label class="tsr-sort" for="tsr-sort">Sort by
+                                <select id="tsr-sort">
+                                    <option value="featured">Featured</option>
+                                    <option value="newest" selected>Newest first</option>
+                                    <option value="oldest">Oldest first</option>
+                                    <option value="rating">Highest rated</option>
+                                </select>
+                            </label>
+                        </div>
                     </div>
-                    <div class="tsr-bars" role="group" aria-label="Rating breakdown">
-                        <div class="tsr-bar-row"><span>5<i class="fa fa-star" aria-hidden="true"></i></span><div class="tsr-bar-track"><i style="width:100%"></i></div><b>5</b></div>
-                        <div class="tsr-bar-row"><span>4<i class="fa fa-star" aria-hidden="true"></i></span><div class="tsr-bar-track"><i style="width:60%"></i></div><b>3</b></div>
-                    </div>
+                    <div class="tsr-bars" id="tsr-bars" role="group" aria-label="Rating breakdown"></div>
                     <div class="tsr-proof-foot">
                         <div class="tsr-years">
-                            <strong>2015 – 2026</strong>
-                            <span>11 years of guest reviews</span>
+                            <strong id="tsr-years-range">2015 – 2026</strong>
+                            <span id="tsr-years-note">11 years of guest reviews</span>
                         </div>
                         <div class="tsr-award">
                             <img src="images/affiliations/affilations-2.png" alt="TripAdvisor Certificate of Excellence" loading="lazy" decoding="async">
@@ -765,199 +796,134 @@
                 </aside>
 
                 <div class="tsr-results">
-                    <div class="tsr-grid" id="tsr-grid">
-                <article class="tsr-card" data-origin="international" data-date="2026-03" data-rating="5">
-                    <div class="tsr-card-inner">
-                        <div class="tsr-lead-main">
-                            <div class="tsr-rate">
-                                <span class="tsr-stars" role="img" aria-label="Rated 5 out of 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></span>
-                                <b>5.0</b>
-                                <span class="tsr-src">TripAdvisor</span>
-                            </div>
-                            <h3 class="tsr-card-title">Twice in a lifetime</h3>
-                            <p class="tsr-card-text">Thank you to Saurabh Agrawal of The Indian Voyage for arranging my
-                                three-night visit to Dhikala Forest Rest House. This was my second visit to Dhikala and it
-                                was even better than the first. The tiger sightings were the best I have had anywhere —
-                                six safaris and something great on each drive.</p>
-                            <div class="tsr-foot">
-                                <span class="tsr-avatar" aria-hidden="true">AF</span>
-                                <div class="tsr-author"><strong>Amy F</strong><span>Eugene, Oregon, USA</span></div>
-                                <span class="tsr-ago">8 mo ago</span>
-                            </div>
-                        </div>
-                        <figure class="tsr-media"><img src="images/dhikala-corbett-bg-1.jpg" alt="Tiger sighting in Dhikala zone" loading="lazy" decoding="async"></figure>
-                    </div>
-                </article>
-
-                <article class="tsr-card" data-origin="international" data-date="2018-02" data-rating="4">
-                    <div class="tsr-card-inner">
-                        <div class="tsr-lead-main">
-                            <div class="tsr-rate">
-                                <span class="tsr-stars" role="img" aria-label="Rated 4 out of 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star is-empty" aria-hidden="true"></i></span>
-                                <b>4.0</b>
-                                <span class="tsr-src">TripAdvisor</span>
-                            </div>
-                            <h3 class="tsr-card-title">Highlight of our time in North India!</h3>
-                            <p class="tsr-card-text">Yes, there was electricity at DFRH and it never went out. The food
-                                is good, the beds are hard as a board, the place was relatively clean, there is no heat.
-                                And it's smack dab in the middle of Corbett National Park! We booked thru India Voyage
-                                and I would recommend them.</p>
-                            <div class="tsr-foot">
-                                <span class="tsr-avatar" aria-hidden="true">PM</span>
-                                <div class="tsr-author"><strong>Patty M</strong><span>Colorado Springs, Colorado, USA</span></div>
-                                <span class="tsr-ago">8 yrs ago</span>
-                            </div>
-                        </div>
-                        <figure class="tsr-media"><img src="images/testimonial-photo-1-lg.jpg" alt="Dhikala Forest Rest House exterior" loading="lazy" decoding="async"></figure>
-                    </div>
-                </article>
-
-                <article class="tsr-card" data-origin="india" data-date="2023-12" data-rating="4">
-                    <div class="tsr-card-inner">
-                        <div class="tsr-lead-main">
-                            <div class="tsr-rate">
-                                <span class="tsr-stars" role="img" aria-label="Rated 4 out of 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star is-empty" aria-hidden="true"></i></span>
-                                <b>4.0</b>
-                                <span class="tsr-src">TripAdvisor</span>
-                            </div>
-                            <h3 class="tsr-card-title">Jim Corbett means Dhikala FRH</h3>
-                            <p class="tsr-card-text">Bookings were done by The Indian Voyage, Mr. Saurabh Agarwal. He
-                                has been a constant support for the last 10-11 years now. Our safari driver, Mr. Shahvej
-                                Ansari, was friendly and experienced — his instincts got us two up-close leopard
-                                sightings, which is rare in Corbett.</p>
-                            <div class="tsr-foot">
-                                <span class="tsr-avatar" aria-hidden="true">MA</span>
-                                <div class="tsr-author"><strong>manu_agarwal28</strong><span>New Delhi, India</span></div>
-                                <span class="tsr-ago">2 yrs ago</span>
-                            </div>
-                        </div>
-                        <figure class="tsr-media"><img src="images/dhikala-corbett-bg-6.jpg" alt="Forest rest house cottages in Dhikala zone" loading="lazy" decoding="async"></figure>
-                    </div>
-                </article>
-
-                <article class="tsr-card" data-origin="india" data-date="2021-01" data-rating="5">
-                    <div class="tsr-card-inner">
-                        <div class="tsr-lead-main">
-                            <div class="tsr-rate">
-                                <span class="tsr-stars" role="img" aria-label="Rated 5 out of 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></span>
-                                <b>5.0</b>
-                                <span class="tsr-src">TripAdvisor</span>
-                            </div>
-                            <h3 class="tsr-card-title">Amazing stay at Dhikala</h3>
-                            <p class="tsr-card-text">Indian Voyage (Saurabh Agrawal) arranged the entire tour including
-                                booking and safari. Our driver Ansaar was experienced and knowledgeable, and made the
-                                safari memorable. Rooms 1 and 2 of the New FRH look straight over the Ramganga.</p>
-                            <div class="tsr-foot">
-                                <span class="tsr-avatar" aria-hidden="true">AG</span>
-                                <div class="tsr-author"><strong>Ankit G</strong><span>Jaipur, India</span></div>
-                                <span class="tsr-ago">5 yrs ago</span>
-                            </div>
-                        </div>
-                        <figure class="tsr-media"><img src="images/dhikala-corbett-bg-2.jpg" alt="Room at Dhikala Forest Rest House" loading="lazy" decoding="async"></figure>
-                    </div>
-                </article>
-
-                <article class="tsr-card" data-origin="india" data-date="2019-06" data-rating="5">
-                    <div class="tsr-card-inner">
-                        <div class="tsr-lead-main">
-                            <div class="tsr-rate">
-                                <span class="tsr-stars" role="img" aria-label="Rated 5 out of 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></span>
-                                <b>5.0</b>
-                                <span class="tsr-src">TripAdvisor</span>
-                            </div>
-                            <h3 class="tsr-card-title">Best place in jungles across India</h3>
-                            <p class="tsr-card-text">MR Pardeep helped a lot with booking and coordinating the travel.
-                                Dhikala FRH sits in the core area of Corbett tiger reserve, with the Ramganga flowing
-                                behind it. The safari starts the moment you enter through Dhangarhi gate.</p>
-                            <div class="tsr-foot">
-                                <span class="tsr-avatar" aria-hidden="true">VP</span>
-                                <div class="tsr-author"><strong>Vinayak P</strong><span>Alibaug, India</span></div>
-                                <span class="tsr-ago">7 yrs ago</span>
-                            </div>
-                        </div>
-                        <figure class="tsr-media"><img src="images/dhikala-corbett-bg-7.jpg" alt="Rest house cottages in Dhikala zone" loading="lazy" decoding="async"></figure>
-                    </div>
-                </article>
-
-                <article class="tsr-card" data-origin="india" data-date="2018-05" data-rating="5">
-                    <div class="tsr-card-inner">
-                        <div class="tsr-lead-main">
-                            <div class="tsr-rate">
-                                <span class="tsr-stars" role="img" aria-label="Rated 5 out of 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></span>
-                                <b>5.0</b>
-                                <span class="tsr-src">TripAdvisor</span>
-                            </div>
-                            <h3 class="tsr-card-title">Better than I expected</h3>
-                            <p class="tsr-card-text">My concerns were sorted as soon as I reached out to Pardeep of
-                                Indian Voyages (09999851075). He handled the entire trip very professionally and got us
-                                perfect accommodations — far better than I expected.</p>
-                            <div class="tsr-foot">
-                                <span class="tsr-avatar" aria-hidden="true">XC</span>
-                                <div class="tsr-author"><strong>xcelsior999</strong><span>Mumbai, India</span></div>
-                                <span class="tsr-ago">8 yrs ago</span>
-                            </div>
-                        </div>
-                        <figure class="tsr-media"><img src="images/dhikala-corbett-bg-3.jpg" alt="Interior of a Dhikala forest rest house room" loading="lazy" decoding="async"></figure>
-                    </div>
-                </article>
-
-                <article class="tsr-card" data-origin="india" data-date="2018-01" data-rating="5">
-                    <div class="tsr-card-inner">
-                        <div class="tsr-lead-main">
-                            <div class="tsr-rate">
-                                <span class="tsr-stars" role="img" aria-label="Rated 5 out of 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></span>
-                                <b>5.0</b>
-                                <span class="tsr-src">TripAdvisor</span>
-                            </div>
-                            <h3 class="tsr-card-title">One of the best places in India for a wildlife vacation</h3>
-                            <p class="tsr-card-text">The FRH is right in the middle of the jungle on the banks of the
-                                Ramganga reservoir. You need permits, safari, gypsy and guide bookings pre-arranged —
-                                Saurabh Agrawal from Indian Voyage arranged it all beautifully for our family of
-                                four.</p>
-                            <div class="tsr-foot">
-                                <span class="tsr-avatar" aria-hidden="true">SM</span>
-                                <div class="tsr-author"><strong>Sid Mukherjee</strong><span>Bangalore, India</span></div>
-                                <span class="tsr-ago">8 yrs ago</span>
-                            </div>
-                        </div>
-                        <figure class="tsr-media"><img src="images/dhikala-corbett-bg-8.jpg" alt="Ramganga reservoir near Dhikala" loading="lazy" decoding="async"></figure>
-                    </div>
-                </article>
-
-                <article class="tsr-card" data-origin="india" data-date="2015-04" data-rating="4">
-                    <div class="tsr-card-inner">
-                        <div class="tsr-lead-main">
-                            <div class="tsr-rate">
-                                <span class="tsr-stars" role="img" aria-label="Rated 4 out of 5"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star is-empty" aria-hidden="true"></i></span>
-                                <b>4.0</b>
-                                <span class="tsr-src">TripAdvisor</span>
-                            </div>
-                            <h3 class="tsr-card-title">Jungle safari at Corbett</h3>
-                            <p class="tsr-card-text">Mr Pradeep Kapoor of M/s Indian Voyage made a seamless programme
-                                that went off smoothly. Because of driver Haroon's effort, we saw 2 tigers, tuskers and
-                                other animals in the core area — and the 4-hour watchtower stay was fascinating.</p>
-                            <div class="tsr-foot">
-                                <span class="tsr-avatar" aria-hidden="true">BI</span>
-                                <div class="tsr-author"><strong>Biplab300</strong><span>New Delhi, India</span></div>
-                                <span class="tsr-ago">11 yrs ago</span>
-                            </div>
-                        </div>
-                        <figure class="tsr-media"><img src="images/dhikala-corbett-bg-9.jpg" alt="Forest trail in Dhikala zone" loading="lazy" decoding="async"></figure>
-                    </div>
-                </article>
-                    </div><!-- /#tsr-grid -->
+                    <div class="tsr-grid" id="tsr-grid"></div>
                     <p class="tsr-empty" hidden>No reviews match this filter.</p>
-                </div><!-- /.tsr-results -->
-            </div><!-- /.tsr-layout -->
+                </div>
+            </div>
         </div>
     </section>
+
+    <div class="tsr-modal" id="tsr-modal" hidden>
+        <div class="tsr-modal-backdrop" data-close></div>
+        <div class="tsr-modal-panel" role="dialog" aria-modal="true" aria-labelledby="tsr-modal-name">
+            <div class="tsr-modal-head">
+                <p class="tsr-modal-name" id="tsr-modal-name"></p>
+                <button type="button" class="tsr-modal-x" id="tsr-modal-close" data-close aria-label="Close review">&times;</button>
+            </div>
+            <div class="tsr-modal-body"><img id="tsr-modal-img" alt="" decoding="async"></div>
+            <div class="tsr-modal-foot">
+                <a class="tsr-modal-link" id="tsr-modal-link" href="#" target="_blank" rel="noopener">Open on TripAdvisor <i class="fa fa-external-link" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
 
     <script>
         (function () {
             var grid = document.getElementById('tsr-grid');
             if (!grid) return;
-            var cards = [].slice.call(grid.querySelectorAll('.tsr-card'));
+
+            // One object per review. img = full screenshot of the review (bottom of the tile links out).
+            // url = that review's permalink. origin: 'international' | 'india' (reviewer's location).
+            // date: YYYY-MM of the review. stars: 1-5. place may be '' when TripAdvisor shows none.
+            var TA = 'https://www.tripadvisor.in/ShowUserReviews-g1152784-d1893435-';
+            var REVIEWS = [
+                { name: 'Amy F', place: 'Eugene, Oregon', stars: 5, title: 'Twice in a lifetime', date: '2026-03', origin: 'international', img: 'images/reviews/r1054143482.png', url: TA + 'r1054143482-Dhikala_Forest_Rest_House-Jim_Corbett_National_Park_Nainital_District_Uttarakh.html' },
+                { name: 'Dr. Zubin Hilloo', place: '', stars: 5, title: 'Dhikala FRH - once in a lifetime experience', date: '2023-05', origin: 'international', img: 'images/reviews/r891693833.png', url: TA + 'r891693833-Dhikala_Forest_Rest_House-Jim_Corbett_National_Park_Nainital_District_Uttarakha.html' },
+                { name: 'tlinn-com', place: 'Bend, Oregon', stars: 4, title: 'Your chance to witness one of the most majestic and endangered animals in the world in its natural habitat', date: '2018-02', origin: 'international', img: 'images/reviews/r557992615.png', url: TA + 'r557992615-Dhikala_Forest_Rest_House-Jim_Corbett_National_Park_Nainital_District_Uttarakha.html' },
+                { name: 'Patty M', place: 'Colorado Springs, Colorado', stars: 4, title: 'Highlight of our Time in North India!', date: '2018-02', origin: 'international', img: 'images/reviews/r559444087.png', url: TA + 'r559444087-Dhikala_Forest_Rest_House-Jim_Corbett_National_Park_Nainital_District_Uttarakha.html' },
+                { name: 'cindy r', place: '', stars: 3, title: '3 days in Corbett on safari', date: '2017-01', origin: 'international', img: 'images/reviews/r450375280.png', url: TA + 'r450375280-Dhikala_Forest_Rest_House-Jim_Corbett_National_Park_Nainital_District_Uttarakha.html' },
+                { name: 'Kunal Sahay', place: 'London, United Kingdom', stars: 5, title: 'Awesome Dhikala!!!', date: '2016-02', origin: 'international', img: 'images/reviews/r344230414.png', url: TA + 'r344230414-Dhikala_Forest_Rest_House-Jim_Corbett_National_Park_Nainital_District_Uttarakha.html' },
+                { name: 'Navin S', place: 'San Francisco, California', stars: 5, title: 'Great Experience', date: '2016-02', origin: 'international', img: 'images/reviews/r349374086.png', url: TA + 'r349374086-Dhikala_Forest_Rest_House-Jim_Corbett_National_Park_Nainital_District_Uttarakha.html' },
+                { name: 'Ram Narasinham', place: 'Cuttack, India', stars: 5, title: 'Beauty sans AC, TV, Phone', date: '2016-02', origin: 'india', img: 'images/reviews/r349181864.png', url: TA + 'r349181864-Dhikala_Forest_Rest_House-Jim_Corbett_National_Park_Nainital_District_Uttarakha.html' },
+                { name: 'AnirudhGTR35', place: 'New Delhi, India', stars: 5, title: 'The Best Place to stay in Dhikala.', date: '2016-02', origin: 'india', img: 'images/reviews/r344495059.png', url: TA + 'r344495059-Dhikala_Forest_Rest_House-Jim_Corbett_National_Park_Nainital_District_Uttarakha.html' },
+                { name: 'Sheetaldgupta', place: 'Mumbai, India', stars: 5, title: 'BEST WILDLIFE EXPERIENCE', date: '2015-03', origin: 'india', img: 'images/reviews/r257976447.png', url: TA + 'r257976447-Dhikala_Forest_Rest_House-Jim_Corbett_National_Park_Nainital_District_Uttarakha.html' }
+            ];
+
+            function esc(s) {
+                return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            }
+            function avgStarsMarkup(avg) {
+                var out = '';
+                for (var i = 1; i <= 5; i++) {
+                    var v = avg - i + 1;
+                    out += '<i class="fa ' + (v >= 0.75 ? 'fa-star' : v >= 0.25 ? 'fa-star-half-o' : 'fa-star-o') + '" aria-hidden="true"></i>';
+                }
+                return out;
+            }
+
+            var cards = REVIEWS.map(function (r) {
+                var i = REVIEWS.indexOf(r);
+                var card = document.createElement('article');
+                card.className = 'tsr-card';
+                card.setAttribute('data-origin', r.origin);
+                card.setAttribute('data-date', r.date);
+                card.setAttribute('data-rating', r.stars);
+                card.innerHTML =
+                    '<div class="tsr-shot">'
+                    + '<button type="button" class="tsr-shot-open" data-review="' + i + '"'
+                    + ' aria-label="Expand ' + esc(r.name) + '&#39;s review">'
+                    + '<img src="' + esc(r.img) + '" alt="TripAdvisor review by ' + esc(r.name) + ': ' + esc(r.title)
+                    + ', rated ' + r.stars + ' of 5' + (r.place ? ', from ' + esc(r.place) : '') + '" loading="lazy" decoding="async">'
+                    + '</button>'
+                    + '<span class="tsr-shot-bar">'
+                    + '<span class="tsr-shot-who"><b>' + esc(r.name) + '</b></span>'
+                    + '<span class="tsr-shot-acts">'
+                    + '<button type="button" class="tsr-shot-btn" data-review="' + i + '" title="Expand review"'
+                    + ' aria-label="Expand ' + esc(r.name) + '&#39;s review"><i class="fa fa-expand" aria-hidden="true"></i></button>'
+                    + '<a class="tsr-shot-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener"'
+                    + ' title="Open on TripAdvisor" aria-label="Open ' + esc(r.name) + '&#39;s review on TripAdvisor in a new tab">'
+                    + '<i class="fa fa-external-link" aria-hidden="true"></i></a>'
+                    + '</span></span></div>';
+                grid.appendChild(card);
+                return card;
+            });
             var featured = cards.slice();
+
+            /* ---- expanded view modal ---- */
+            var modal = document.getElementById('tsr-modal');
+            var modalImg = document.getElementById('tsr-modal-img');
+            var modalName = document.getElementById('tsr-modal-name');
+            var modalLink = document.getElementById('tsr-modal-link');
+            var modalClose = document.getElementById('tsr-modal-close');
+            var lastFocus = null;
+
+            function openReview(i) {
+                var r = REVIEWS[i];
+                if (!modal || !r) return;
+                lastFocus = document.activeElement;
+                modalName.textContent = r.name + (r.place ? ' \u00b7 ' + r.place : '');
+                modalImg.src = r.img;
+                modalImg.alt = 'TripAdvisor review by ' + r.name + ': ' + r.title;
+                modalLink.href = r.url;
+                modalLink.setAttribute('aria-label', 'Open ' + r.name + '\u2019s review on TripAdvisor in a new tab');
+                modal.hidden = false;
+                document.body.style.overflow = 'hidden';
+                modalClose.focus();
+            }
+            function closeReview() {
+                if (!modal || modal.hidden) return;
+                modal.hidden = true;
+                document.body.style.overflow = '';
+                if (lastFocus) lastFocus.focus();
+            }
+            grid.addEventListener('click', function (e) {
+                var opener = e.target.closest('[data-review]');
+                if (opener) openReview(+opener.getAttribute('data-review'));
+            });
+            modal.addEventListener('click', function (e) {
+                if (e.target.closest('[data-close]')) closeReview();
+            });
+            modal.addEventListener('keydown', function (e) {
+                if (e.key !== 'Tab') return;
+                var f = modal.querySelectorAll('button, a[href]');
+                var first = f[0], last = f[f.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeReview();
+            });
+
             var chips = [].slice.call(document.querySelectorAll('.tsr-chip'));
             var sort = document.getElementById('tsr-sort');
             var empty = document.querySelector('.tsr-empty');
@@ -967,6 +933,45 @@
             var desktop = window.matchMedia('(min-width: 992px)');
             var navEl = document.querySelector('.navbar-fixed-top');
 
+            /* ---- aggregate proof panel from the same data ---- */
+            (function () {
+                var total = REVIEWS.length;
+                var sum = REVIEWS.reduce(function (n, r) { return n + r.stars; }, 0);
+                var avg = total ? sum / total : 0;
+                var years = REVIEWS.map(function (r) { return parseInt(r.date.slice(0, 4), 10); });
+
+                chips.forEach(function (chip) {
+                    var f = chip.getAttribute('data-filter');
+                    chip.querySelector('span').textContent = f === 'all' ? total
+                        : REVIEWS.filter(function (r) { return r.origin === f; }).length;
+                });
+
+                document.getElementById('tsr-avg').textContent = avg.toFixed(1);
+                var avgStars = document.getElementById('tsr-avg-stars');
+                avgStars.setAttribute('aria-label', 'Rated ' + avg.toFixed(1) + ' out of 5');
+                avgStars.innerHTML = avgStarsMarkup(avg);
+                document.getElementById('tsr-note').textContent =
+                    total + ' verified reviews from travellers who stayed at Dhikala.';
+
+                var bars = document.getElementById('tsr-bars');
+                for (var s = 5; s >= 1; s--) {
+                    var count = REVIEWS.filter(function (r) { return r.stars === s; }).length;
+                    if (!count) continue;
+                    bars.insertAdjacentHTML('beforeend',
+                        '<div class="tsr-bar-row"><span>' + s + '<i class="fa fa-star" aria-hidden="true"></i></span>'
+                        + '<div class="tsr-bar-track"><i style="width:' + Math.round(count / total * 100) + '%"></i></div>'
+                        + '<b>' + count + '</b></div>');
+                }
+
+                if (years.length) {
+                    var min = Math.min.apply(null, years), max = Math.max.apply(null, years);
+                    document.getElementById('tsr-years-range').textContent = min + ' \u2013 ' + max;
+                    document.getElementById('tsr-years-note').textContent =
+                        (max - min) + ((max - min) === 1 ? ' year of guest reviews' : ' years of guest reviews');
+                }
+            })();
+
+            /* ---- sticky proof / control placement ---- */
             function fitProof() {
                 if (!proof) return;
                 var room = proof.offsetHeight + (navEl ? navEl.offsetHeight : 0) + 24;
@@ -974,7 +979,7 @@
             }
             function placeControls() {
                 if (!controls || !proof || !results) return;
-                if (desktop.matches) proof.insertBefore(controls, proof.firstElementChild);
+                if (desktop.matches) proof.querySelector('.tsr-proof-top').appendChild(controls);
                 else results.insertBefore(controls, grid);
                 fitProof();
             }
@@ -989,20 +994,7 @@
             window.addEventListener('resize', setNavHeight);
             if (window.ResizeObserver && navEl) new ResizeObserver(setNavHeight).observe(navEl);
 
-            function ago(date) {
-                var now = new Date();
-                var diff = (now.getFullYear() - parseInt(date.slice(0, 4), 10)) * 12
-                    + (now.getMonth() + 1 - parseInt(date.slice(5, 7), 10));
-                if (diff <= 0) return 'this month';
-                if (diff < 12) return diff + ' mo ago';
-                var yrs = Math.floor(diff / 12);
-                return yrs + (yrs === 1 ? ' yr ago' : ' yrs ago');
-            }
-            cards.forEach(function (card) {
-                var el = card.querySelector('.tsr-ago');
-                if (el) el.textContent = ago(card.getAttribute('data-date'));
-            });
-
+            /* ---- filter + sort ---- */
             function byDate(a, b) { return a.getAttribute('data-date') < b.getAttribute('data-date') ? -1 : 1; }
             function byRating(a, b) {
                 return b.getAttribute('data-rating') - a.getAttribute('data-rating') || byDate(b, a);
@@ -1048,121 +1040,6 @@
         })();
     </script>
 
-    <!--5 row here-->
-
-    <div class="container">
-        <div class="col-md-6  animated bounceInLeft" style="animation-delay: 4s;">
-            <h3>Client Testimonials</h3>
-            <div class="divider styleColor">
-                <i class="fa fa-leaf"></i>
-            </div>
-            <div class="row">
-
-                <div id="carousel-example" class="row carousel slide" data-ride="carousel">
-
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example" data-slide-to="1"></li>
-                        <li data-target="#carousel-example" data-slide-to="2"></li>
-                    </ol>
-
-                    <div class="carousel-inner">
-                        <div class="item active">
-
-                            <div class="row slide-custom">
-                                <figure><img src="images/madanRai.jpg" class="testImg"></figure>
-                                <p>Hi Rohit, It was a great wild safari tour with Rohit at Dhikala. We are having a
-                                    great time in Dhikala and just wanted to let you know that your team job was
-                                    excellent and very professional. We will certainly recommend The Indian Voyage to
-                                    our friends and colleagues.
-                                </p>
-                                <p style="float:right;">- <em>By Madan Rai</em></p>
-                            </div>
-
-                        </div>
-                        <div class="item">
-                            <div class="container center">
-                                <div class="col-md-6  slide-custom">
-                                    <figure><img src="images/abhinav.jpg" class="testImg"></figure>
-                                    <p>Hello Saurabh,
-                                        I along with my family would like to convey our appreciation of the services
-                                        provided by you for the dhikala safari tour. Also specially appreciate to Mr
-                                        Pradeep, for his truly professional approach to work.
-                                    </p>
-                                    <p style="float:right;">- <em>By Abhinav Malhotra</em></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="container center">
-                                <div class="col-md-6 slide-custom">
-                                    <figure><img src="images/varun.jpg" class="testImg"></figure>
-                                    <p>This was one of my best trips to Dhikala.This is the dream destination for any
-                                        wildlife photographer. There are 4 ranges for visitors - Jhirna, Bijrani,
-                                        Dhikala and Durgadevi. Of these Dhikala is the best.
-
-                                    </p>
-                                    <p style="float:right;">- <em>By Varun Chopra</em></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-        </div>
-
-
-
-        <div class="col-md-6 animated bounceInRight" style="animation-delay: 4s;">
-            <h3>Outlook Traveller Views</h3>
-            <div class="divider styleColor">
-                <i class="fa fa-leaf"></i>
-            </div>
-
-            <div class="row   animated fadeInDown">
-                <div class="col-md-4">
-                    <a href="outlook_traveller.html"><img src="images/traveller.jpg" border="0" class="newimg"></a>
-                </div>
-                <div class="col-md-8">
-
-                    <strong>The Indian Voyage Featured as
-                        Expert for Dhikala Tour Package in outlook traveller magazine...</strong><br>
-                    <br>
-                    <br>
-
-                </div>
-
-                <a href="outlook_traveller.html" role="button" class="btn btn-danger float-right">Read More <span
-                        class="glyphicon glyphicon-chevron-right"></span></a>
-
-
-
-            </div>
-
-
-        </div>
-
-
-
-    </div>
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-    </section>
 
     <div class="container-fluid">
 
