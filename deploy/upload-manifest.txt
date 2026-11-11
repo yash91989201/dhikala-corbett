@@ -47,6 +47,16 @@ images/affiliations/affilations-3.png
 images/affiliations/affilations-4.png
 images/affiliations/gst-registration-services-300x300.png
 images/affiliations/nidhi-300x300.png
+images/reviews/r1054143482.png
+images/reviews/r257976447.png
+images/reviews/r344230414.png
+images/reviews/r344495059.png
+images/reviews/r349181864.png
+images/reviews/r349374086.png
+images/reviews/r450375280.png
+images/reviews/r557992615.png
+images/reviews/r559444087.png
+images/reviews/r891693833.png
 --- optional (not linked from anywhere; only if the remote has them) ---
 kalakhand-packageold.html
 enquiry.html21212
